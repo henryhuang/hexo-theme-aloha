@@ -1,0 +1,25 @@
+
+# html languages
+language:
+- zh-CN
+- en
+
+# main menu navigation
+menu:
+  Home: /index.html
+#  Archives: /archives
+#  About: /about
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/aloha.css
+- /css/semantic.min.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/jquery-3.1.0.min.js
+- /js/aloha.js
+- /js/semantic.min.js

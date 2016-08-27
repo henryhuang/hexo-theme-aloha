@@ -1,0 +1,55 @@
+<%
+var pageTitle = page.title || config.subtitle || '';
+if (is_archive()) pageTitle = 'Archives';
+if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle += ': ' + page.year;
+if (pageTitle == '') {
+    pageTitle = config.title;
+} else {
+    pageTitle += ' | ' + config.title;
+}
+%>
+
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= pageTitle %></title>
+    <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+    <!-- stylesheets list from config.yml -->
+    <% theme.stylesheets.forEach(function(url) { %>
+    <link rel="stylesheet" href="<%= url %>">
+    <% }); %>
+    <% } %>
+</head>
+<body>
+
+<div class="body">
+    <%- partial('_partial/header')%>
+    <div class="ui container">
+        <div class="ui one column grid">
+            <div class="column">
+                <div id="content-outer">
+                    <div id="content-inner">
+                        <%- body %>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <%- partial('_partial/footer')%>
+</div>
+
+<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+<!-- scripts list from theme config.yml -->
+<% theme.scripts.forEach(function(url) { %>
+<script src="<%= url %>"></script>
+<% }); %>
+<% } %>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<header id="blog-header">
+    <div class="ui secondary pointing menu">
+        <div class="header item"><%= config.title %></div>
+        <% Object.keys(theme.menu).forEach(function(key) { %>
+        <% if (url_for(theme.menu[key]) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key]) == '/.' && is_home())) { %>
+        <a href="<%= theme.menu[key] %>" class="active item"><%= key %></a>
+        <% } else { %>
+        <a href="<%= theme.menu[key] %>" class="item"><%= key %></a>
+        <% } %>
+        <% }); %>
+        <div class="right menu">
+            <a class="ui item">RSS</a>
+        </div>
+    </div>
+</header>

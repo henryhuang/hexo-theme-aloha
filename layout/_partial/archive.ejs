@@ -1,0 +1,52 @@
+<% if (pagination == 2){ %>
+
+<div class="ui relaxed list">
+    <% page.posts.each(function(post){ %>
+
+            <div class="item">
+
+                <div class="content post-content">
+                    <div>
+                        <a class="header" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                    </div>
+                    <%- partial('post-description', {post: post})%>
+                </div>
+            </div>
+
+    <% }) %>
+        </div>
+
+<% } else { %>
+
+    <% var last; %>
+    <% page.posts.each(function(post, i){ %>
+
+        <% var year = post.date.year(); %>
+
+        <% if (last != year){ %>
+
+            <% if (last != null){ %>
+                </div></section>
+            <% } %>
+
+            <% last = year; %>
+            <section class="archives-wrap">
+                <div class="archive-year-wrap">
+                    <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+                </div>
+                <div class="archives">
+                    <% } %>
+                    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+                    <% }) %>
+                    <% if (page.posts.length){ %>
+                </div>
+            </section>
+        <% } %>
+
+    <% } %>
+
+    <% if (page.total > 1){ %>
+        <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
+        <%- paginator2()%>
+
+<% } %>

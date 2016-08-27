@@ -1,0 +1,13 @@
+<% if (post.tags && post.tags.length){ %>
+
+    <span>
+        <i class="tag icon"></i>
+    </span>
+
+    <% post.tags.forEach(function (tag) { %>
+    <span class="ui tiny label">
+        <%= tag.name %>
+    </span>
+
+    <% }) %>
+<% } %>
