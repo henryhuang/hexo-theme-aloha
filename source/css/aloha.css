@@ -4,15 +4,24 @@
 .post-content div {
   padding-top: 10px;
 }
-@media (min-height: 320px) {
-  .ui.footer.form-page {
-    /* Increased specificity for SO snippet priority */
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-}
 .blog-footer {
   padding-top: 10px;
   padding-bottom: 20px;
+}
+.post-content div a {
+  display: block;
+}
+.main.container {
+  padding: 2em 0em 7em;
+}
+.main.container .article-footer {
+  margin-top: 20px;
+}
+.main.container .pagination {
+  margin-top: 40px;
+}
+.post-description .post-description-item {
+  padding-right: 10px;
+  height: 100%;
+  vertical-align: middle;
 }

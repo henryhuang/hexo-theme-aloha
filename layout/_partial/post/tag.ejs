@@ -1,12 +1,12 @@
 <% if (post.tags && post.tags.length){ %>
 
     <span>
-        <i class="tag icon"></i>
+        <i class="tags icon"></i>
     </span>
 
     <% post.tags.forEach(function (tag) { %>
     <span class="ui tiny label">
-        <%= tag.name %>
+        <a href="<%= url_for(tag.path)  %>"><%= tag.name %></a>
     </span>
 
     <% }) %>

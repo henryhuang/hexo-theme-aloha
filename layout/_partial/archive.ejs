@@ -1,17 +1,27 @@
 <% if (pagination == 2){ %>
 
 <div class="ui relaxed list">
+    <% var yearCurrent = date(new Date(), 'YYYY') %>
     <% page.posts.each(function(post){ %>
 
-            <div class="item">
+    <%
+        var postYear = date(post.date, 'YYYY');
 
-                <div class="content post-content">
-                    <div>
-                        <a class="header" href="<%- url_for(post.path) %>"><%= post.title %></a>
-                    </div>
-                    <%- partial('post-description', {post: post})%>
-                </div>
+    if(postYear != yearCurrent) {
+        yearCurrent = postYear;
+    %>
+    <div class="ui horizontal divider"> <%= yearCurrent %> <i class="angle down icon"></i> </div>
+    <% } %>
+
+    <div class="item">
+
+        <div class="content post-content">
+            <div>
+                <a class="header" href="<%- url_for(post.path) %>"><%= post.title %></a>
             </div>
+            <%- partial('post-description', {post: post})%>
+        </div>
+    </div>
 
     <% }) %>
         </div>
