@@ -25,3 +25,13 @@
   height: 100%;
   vertical-align: middle;
 }
+pre {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+#tag .tagpage.header {
+  font-size: 30px;
+}
+#tag .ui.dividing.header {
+  vertical-align: middle;
+}

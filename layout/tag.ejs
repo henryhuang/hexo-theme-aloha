@@ -1,22 +1,34 @@
 
-<div id="tag">
-  <h1><%=page.tag%></h1>
-  <% page.posts.each(function(article) { %>
-    <div class="tag-item">
-      <% if (article.link) { %>
-        <a href="<%=url_for(article.link)%>" target="_blank">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } else { %>
-        <a href="<%=url_for(article.link)%>">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } %>
-      <time datetime="<%=date_xml(article.date)%>">
-        <%=date(article.date)%>
-      </time>
+<div class="ui main container">
+
+    <div id="tag"class="ui relaxed list">
+        <div class="ui header">
+            <span class="tagpage header">
+                <%=page.tag%>
+            </span>
+            <div class="ui label">
+                <i class="book icon"></i><%= page.posts.size() %>
+            </div>
+        </div>
+        <% page.posts.each(function(article) { %>
+            <div class="item">
+                <div class="content post-content"></div>
+                <% if (article.link) { %>
+                <a href="<%=url_for(article.link)%>" target="_blank">
+                    <%=article.title || 'No Title'%>
+                </a>
+                <% } else { %>
+                <a href="<%=url_for(article.path)%>">
+                    <%=article.title || 'No Title'%>
+                </a>
+                <% } %>
+                <time datetime="<%=date_xml(article.date)%>">
+                    <%=date(article.date)%>
+                </time>
+            </div>
+        <% }); %>
     </div>
-  <% }); %>
 </div>
+
 
 <%-partial('_partial/pagination')%>
