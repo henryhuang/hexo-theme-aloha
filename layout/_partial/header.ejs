@@ -2,10 +2,10 @@
     <div class="ui pointing menu">
         <div class="header item"><%= config.title %></div>
         <% Object.keys(theme.menu).forEach(function(key) { %>
-        <% if (url_for(theme.menu[key]) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key]) == '/.' && is_home())) { %>
-        <a href="<%= theme.menu[key] %>" class="active item"><%= key %></a>
+        <% if (url_for(theme.menu[key].value) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key].value) == '/.' && is_home())) { %>
+        <a href="<%= theme.menu[key].value %>" class="active item"><%= __(theme.menu[key].name) %></a>
         <% } else { %>
-        <a href="<%= theme.menu[key] %>" class="item"><%= key %></a>
+        <a href="<%= theme.menu[key].value %>" class="item"><%= __(theme.menu[key].name) %></a>
         <% } %>
         <% }); %>
 

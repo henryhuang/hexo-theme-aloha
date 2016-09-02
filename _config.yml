@@ -6,7 +6,9 @@ language:
 
 # main menu navigation
 menu:
-  Home: /index.html
+  Home:
+    name: homePage
+    value: /index.html
 #  Archives: /archives
 #  About: /about
 
