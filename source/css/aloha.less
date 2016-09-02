@@ -5,6 +5,10 @@
   display: inline;
 }
 
+#content-outer {
+  margin-top: 10px;
+}
+
 //@media (min-height: 320px) {
 //  .ui.footer.form-page { /* Increased specificity for SO snippet priority */
 //    position: absolute;
@@ -27,7 +31,6 @@
 }
 
 .main.container {
-  padding: 2em 0em 7em;
 
   .article-footer {
     margin-top: 20px;
@@ -54,12 +57,22 @@ pre{
   word-wrap: break-word;
 }
 
-#tag {
+.tag-container {
   .tagpage.header {
     font-size: 30px
   }
   .ui.dividing.header {
     vertical-align: middle;
+  }
+}
+
+
+#search-results {
+  .highlight {
+    background-color: #c6e6f4;
+  }
+  .search-result-tags {
+    padding-top: 5px;
   }
 }
 

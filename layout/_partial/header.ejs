@@ -1,5 +1,5 @@
 <header id="blog-header">
-    <div class="ui secondary pointing menu">
+    <div class="ui pointing menu">
         <div class="header item"><%= config.title %></div>
         <% Object.keys(theme.menu).forEach(function(key) { %>
         <% if (url_for(theme.menu[key]) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key]) == '/.' && is_home())) { %>
@@ -8,7 +8,20 @@
         <a href="<%= theme.menu[key] %>" class="item"><%= key %></a>
         <% } %>
         <% }); %>
+
         <div class="right menu">
+
+            <% if(config.algolia.applicationID) {%>
+
+                <div class="ui search item">
+                    <div class="ui transparent icon input">
+                        <input id="search-input" type="text" placeholder="<%= __('searchPlaceholder')%>">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+
+            <% } %>
+
             <a class="ui item" href="/atom.xml">RSS</a>
         </div>
     </div>

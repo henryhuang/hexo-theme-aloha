@@ -23,6 +23,17 @@ if (pageTitle == '') {
     <link rel="stylesheet" href="<%= url %>">
     <% }); %>
     <% } %>
+
+    <% if(config.algolia.applicationID) {%>
+    <script>
+    var algolia = {
+        'applicationID': '<%= config.algolia.applicationID%>',
+        'apiKey': '<%= config.algolia.apiKey%>',
+        'indexName': '<%= config.algolia.indexName%>'
+    };
+    </script>
+    <%}%>
+
 </head>
 <body>
 
@@ -33,7 +44,9 @@ if (pageTitle == '') {
             <div class="column">
                 <div id="content-outer">
                     <div id="content-inner">
-                        <%- body %>
+                        <div class="ui main container">
+                            <%- body %>
+                        </div>
                     </div>
                 </div>
 
@@ -42,6 +55,10 @@ if (pageTitle == '') {
     </div>
     <div class="ui divider"></div>
     <%- partial('_partial/footer')%>
+
+    <% if(config.algolia.applicationID) {%>
+        <%- partial('_partial/search-modal')%>
+    <%}%>
 </div>
 
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
@@ -50,6 +67,11 @@ if (pageTitle == '') {
 <script src="<%= url %>"></script>
 <% }); %>
 <% } %>
+
+<% if(config.algolia.applicationID) {%>
+    <script src="https://cdn.jsdelivr.net/g/algoliasearch@3(algoliasearchLite.min.js),algoliasearch.helper@2"></script>
+    <script src="/js/semantic-ui-algolia.js"></script>
+<%}%>
 
 </body>
 </html>
