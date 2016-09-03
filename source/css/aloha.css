@@ -19,6 +19,7 @@
 }
 .main.container .pagination {
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 .post-description .post-description-item {
   padding-right: 10px;
@@ -35,9 +36,12 @@ pre {
 .tag-container .ui.dividing.header {
   vertical-align: middle;
 }
-#search-results .highlight {
+#search-modal #search-results .highlight {
   background-color: #c6e6f4;
 }
-#search-results .search-result-tags {
+#search-modal #search-results .search-result-tags {
   padding-top: 5px;
+}
+#search-modal .algolia-logo {
+  float: right;
 }
