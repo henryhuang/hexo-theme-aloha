@@ -66,9 +66,10 @@ $('#search-box').on('keyup', function() {
 
 });
 
-$('#search-input').on('click keyup keypress', function() {
+$('#search-input').on('focus click keyup keypress', function() {
     $('#search-modal')
         .modal({
+            inverted: true,
             observeChanges: true,
             onVisible : function(){
                 $("#search-input").blur();
