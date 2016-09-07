@@ -1,0 +1,55 @@
+<div class="ui container right-menu-sidebar">
+    <div class="ui people shape">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header"><%= config.author %></a>
+                    <% if (config.sidebar && config.sidebar.bio) {%>
+                        <div class="meta">
+                            <%= config.sidebar.bio %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        <% if (config.sidebar && config.sidebar.location) {%>
+                        <div class="item">
+                            <i class="marker icon" style="float: left"></i>
+                            <div class="content"><%= config.sidebar.location %></div>
+                        </div>
+                        <%}%>
+                        <% if (config.email) {%>
+                        <div class="item">
+                            <i class="mail icon" style="float: left"></i>
+                            <div class="content">
+                                <a href="mailto:<%= config.email %>"><%= config.email %></a>
+                            </div>
+                        </div>
+                        <%}%>
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        <% if (config.sidebar && config.sidebar.social) {
+
+                            Object.keys(config.sidebar.social).forEach(function (key) {
+
+                                if (config.sidebar.social[key]) {%>
+
+                                <a href="<%= config.sidebar.social[key] %>"><i class="large <%= key %> icon" style="float: left"></i></a>
+
+                            <%}
+                            });
+                        }%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -45,3 +45,6 @@ pre {
 #search-modal .algolia-logo {
   float: right;
 }
+.right-menu-sidebar {
+  padding: 10px;
+}

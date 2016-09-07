@@ -20,3 +20,9 @@ A Hexo theme, use Semantic UI.
          apiKey: 'YOUR APP KEY'
          indexName: 'YOUR INDEX's NAME'
         ```
+        
+- 20160906
+
+    Right sidebar menu
+    
+    // TODO

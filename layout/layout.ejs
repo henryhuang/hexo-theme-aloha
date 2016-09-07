@@ -25,38 +25,89 @@ if (pageTitle == '') {
     <% }); %>
     <% } %>
 
-    <% if(config.algolia.applicationID) {%>
     <script>
-    var algolia = {
-        'applicationID': '<%= config.algolia.applicationID%>',
-        'apiKey': '<%= config.algolia.apiKey%>',
-        'indexName': '<%= config.algolia.indexName%>'
-    };
+        var algoliaEnabled = false;
+        <% if(config.algolia.applicationID) {%>
+            var algolia = {
+                'applicationID': '<%= config.algolia.applicationID%>',
+                'apiKey': '<%= config.algolia.apiKey%>',
+                'indexName': '<%= config.algolia.indexName%>'
+            };
+            algoliaEnabled = true;
+        <%}%>
     </script>
-    <%}%>
 
 </head>
 <body>
 
 <div id="body" class="body">
-    <%- partial('_partial/header')%>
-    <div id="content" class="ui container">
-        <div class="ui one column grid">
-            <div class="column">
-                <div id="content-outer">
-                    <div id="content-inner">
-                        <div class="ui main container">
-                            <%- body %>
+
+    <div class="ui top attached menu">
+
+        <div id="menu-icon">
+            <a class="item"><i class="sidebar icon"></i></a>
+        </div>
+
+        <div class="right menu">
+            <div id="right-menu-icon">
+                <a class="item"><i class="user icon"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ui bottom attached segment pushable" style="margin-bottom: 0;">
+        <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+            <% Object.keys(theme.menu).forEach(function(key) { %>
+            <% var className = "item"; %>
+
+            <% if (url_for(theme.menu[key].value) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key].value) == '/.' && is_home())) { %>
+                <% className = "active item"%>
+            <% } %>
+
+                <a href="<%= theme.menu[key].value %>" class="<%= className %>">
+                    <i class="<%= theme.menu[key].icon %> icon"></i>
+                    <%= __(theme.menu[key].name) %>
+                </a>
+
+            <% }); %>
+
+            <% if(config.algolia.applicationID) {%>
+
+            <div class="ui search item">
+                <div class="ui transparent icon input">
+                    <input id="search-input" type="text" placeholder="<%= __('searchPlaceholder')%>">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+
+            <% } %>
+
+        </div>
+        <div id="right-menu-sidebar" class="ui right vertical sidebar menu">
+        <%- partial('_partial/sidebar')%>
+        </div>
+        <div class="pusher">
+            <div id="content" class="ui container">
+                <div class="ui one column grid">
+                    <div class="column">
+                        <div id="content-outer">
+                            <div id="content-inner">
+                                <div class="ui main container">
+                                    <%- body %>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-
             </div>
+            <div class="ui divider"></div>
+            <%- partial('_partial/footer')%>
         </div>
     </div>
-    <div class="ui divider"></div>
-    <%- partial('_partial/footer')%>
-
     <% if(config.algolia.applicationID) {%>
         <%- partial('_partial/search-modal')%>
     <%}%>
@@ -69,10 +120,6 @@ if (pageTitle == '') {
 <% }); %>
 <% } %>
 
-<% if(config.algolia.applicationID) {%>
-    <script src="https://cdn.jsdelivr.net/g/algoliasearch@3(algoliasearchLite.min.js),algoliasearch.helper@2"></script>
-    <script src="/js/semantic-ui-algolia.js"></script>
-<%}%>
 
 </body>
 </html>
