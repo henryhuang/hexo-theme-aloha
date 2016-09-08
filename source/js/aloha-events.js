@@ -5,23 +5,16 @@ $(function () {
         scrollDistance: 100,
         scrollText: ''
     });
-    $("#menu-icon").on("click ", function () {
-        $('.body #menu-sidebar')
-            .sidebar({
-                context: $('.body .bottom.segment')
-            })
-            .sidebar('attach events', '.body #menu-icon')
-        ;
-    });
-    $("#right-menu-icon").on("click ", function () {
-        $('.body #right-menu-sidebar')
-            .sidebar({
-                context: $('.body .bottom.segment')
-            })
+    $("#menu-icon").on("click", function () {
+        $('#menu-sidebar')
             .sidebar('setting', 'transition', 'overlay')
-            .sidebar('attach events', '.body #right-menu-icon')
+            .sidebar('toggle');
         ;
     });
-    $("#menu-icon").click();
-    $("#right-menu-icon").click();
+    $("#right-menu-icon").on("click", function () {
+        $('#right-menu-sidebar')
+            .sidebar('setting', 'transition', 'overlay')
+            .sidebar('toggle');
+        ;
+    });
 })
