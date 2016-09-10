@@ -1,4 +1,4 @@
-## Elul
+## Aloha
 
 A Hexo theme, use Semantic UI.
 
