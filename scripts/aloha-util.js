@@ -1,12 +1,12 @@
 /**
  * format url
  */
-hexo.extend.helper.register("resourceURL", function(cdn, configURL) {
+hexo.extend.helper.register("resourceURL", function(cdn, local, configURL) {
 
     if(configURL.startsWith('cdn')) {
         return cdn + configURL.substring(3, configURL.length)
     } else {
-        return configURL.substring(5, configURL.length);
+        return local + configURL.substring(5, configURL.length);
     }
 
 });

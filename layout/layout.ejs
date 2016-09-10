@@ -23,7 +23,7 @@ if (pageTitle == '') {
     <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
         <!-- stylesheets list from config.yml -->
         <% theme.stylesheets.forEach(function(url) { %>
-            <link rel="stylesheet" href="<%= resourceURL(cdn, url) %>">
+            <link rel="stylesheet" href="<%= resourceURL(cdn, config.root, url) %>">
         <% }); %>
     <% } %>
 
@@ -109,7 +109,7 @@ if (pageTitle == '') {
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
 <!-- scripts list from theme config.yml -->
 <% theme.scripts.forEach(function(url) { %>
-<script src="<%= resourceURL(cdn, url) %>"></script>
+<script src="<%= resourceURL(cdn, config.root, url) %>"></script>
 <% }); %>
 <% } %>
 
