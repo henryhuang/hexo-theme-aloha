@@ -29,7 +29,7 @@ if (pageTitle == '') {
 
     <script>
         var algoliaEnabled = false;
-        <% if(config.algolia.applicationID) {%>
+        <% if(config.algolia && config.algolia.applicationID) {%>
             var algolia = {
                 'applicationID': '<%= config.algolia.applicationID%>',
                 'apiKey': '<%= config.algolia.apiKey%>',
@@ -71,7 +71,7 @@ if (pageTitle == '') {
 
         <% }); %>
 
-        <% if(config.algolia.applicationID) {%>
+        <% if(config.algolia && config.algolia.applicationID) {%>
 
         <div class="ui search item">
             <div class="ui transparent icon input">
@@ -102,7 +102,7 @@ if (pageTitle == '') {
         <%- partial('_partial/footer')%>
     </div>
 
-<% if(config.algolia.applicationID) {%>
+<% if(config.algolia && config.algolia.applicationID) {%>
     <%- partial('_partial/search-modal')%>
 <%}%>
 
