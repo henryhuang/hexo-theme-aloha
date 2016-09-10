@@ -45,11 +45,8 @@ pre {
 #search-modal .algolia-logo {
   float: right;
 }
-.right-menu-sidebar {
+.sidebar-card {
   padding: 10px;
-}
-.right-menu-sidebar .content {
-  margin-top: 41px;
 }
 #body .menu-buttons {
   position: fixed;
@@ -59,4 +56,9 @@ pre {
 }
 #body .body-content {
   margin-top: 41px;
+}
+#sidebar-top .content {
+  position: relative;
+  background: #FFF;
+  margin: 1rem 0;
 }

@@ -1,26 +1,26 @@
 
 <% if (pagination == 2){ %>
 <div class="ui relaxed list">
-    <% var yearCurrent = date(new Date(), 'YYYY') %>
     <% page.posts.each(function(post){ %>
 
-    <%
-        var postYear = date(post.date, 'YYYY');
+    <% if (theme.index.showYear) {%>
 
-    if(postYear != yearCurrent) {
-        yearCurrent = postYear;
-    %>
-    <div class="ui horizontal divider"> <%= yearCurrent %> <i class="angle down icon"></i> </div>
-    <% } %>
+        <% var yearCurrent = date(new Date(), 'YYYY') %>
+        <%
+            var postYear = date(post.date, 'YYYY');
+
+        if(postYear != yearCurrent) {
+            yearCurrent = postYear;
+        %>
+        <div class="ui horizontal divider"> <%= yearCurrent %> <i class="angle down icon"></i> </div>
+        <% } %>
+
+    <%} %>
 
     <div class="item">
 
-        <div class="content post-content">
-            <div>
-                <a class="header" href="<%- url_for(post.path) %>"><%= post.title %></a>
-            </div>
-            <%- partial('post-description', {post: post})%>
-        </div>
+        <%- partial('theme/simple/post_item', {post: post})%>
+
     </div>
 
     <% }) %>

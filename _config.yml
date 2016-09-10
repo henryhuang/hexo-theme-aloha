@@ -1,7 +1,11 @@
 # html languages
 language:
-- zh-Hans
+- zh-CN
 - en
+
+# aloha has different themes, default one is simple,
+# you could change it with simple, xx
+theme: simple
 
 # main menu navigation
 # icon name see http://semantic-ui.com/elements/icon.html
@@ -10,14 +14,18 @@ menu:
     name: homePage
     value: /index.html
     icon: home
-  Rss:
-    name: rss
-    value: /atom.xml
-    icon: rss
-  About:
-    name: aboutPage
-    value: /about
-    icon: 
+#  Rss:
+#    name: rss
+#    value: /atom.xml
+#    icon: rss
+#  About:
+#    name: aboutPage
+#    value: /about
+#    icon:
+
+# some configuration about index page
+index:
+  showyear: false
 
 # Miscelaneous
 favicon: /favicon.ico
@@ -34,12 +42,12 @@ stylesheets:
 - local/css/aloha.css
 - cdn/semantic-ui/2.2.4/semantic.min.css
 - local/css/prettify-github-v2.min.css
-- local/css/scrolltop.css
+#- local/css/scrolltop.css
 
 # scripts loaded in the end of the body
 scripts:
 - cdn/jquery/3.1.0/jquery.min.js
-- cdn/scrollup/2.4.1/jquery.scrollUp.min.js
+#- cdn/scrollup/2.4.1/jquery.scrollUp.min.js
 - cdn/semantic-ui/2.2.4/semantic.min.js
 - cdn/prettify/r298/prettify.min.js
 #- cnd/g/algoliasearch@3(algoliasearchLite.min.js),algoliasearch.helper@2

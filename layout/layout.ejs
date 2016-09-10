@@ -42,7 +42,20 @@ if (pageTitle == '') {
 </head>
 <body id="body" style="margin-bottom: 0;">
 
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
     <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+        <div id="sidebar-top" class="ui center aligned grid">
+            <div class="sixteen wide column">
+                <div class="content">
+                    <h3><%= config.title %></h3>
+                </div>
+            </div>
+        </div>
+        <%-partial('_partial/sidebar-card')%>
 
         <% Object.keys(theme.menu).forEach(function(key) { %>
         <% var className = "item"; %>
@@ -68,17 +81,6 @@ if (pageTitle == '') {
         </div>
 
         <% } %>
-    </div>
-
-    <div id="right-menu-sidebar" class="ui right vertical sidebar menu">
-        <%- partial('_partial/sidebar')%>
-    </div>
-
-    <div class="ui top fixed menu">
-        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
-        <div class="right menu">
-            <a class="item" id="right-menu-icon"><i class="user icon"></i></a>
-        </div>
     </div>
 
     <div class="pusher body-content">

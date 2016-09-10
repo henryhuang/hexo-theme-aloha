@@ -1,8 +1,6 @@
-<div id="<%= post.layout %>-<%= post.slug %>" class="ui main container article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<div id="<%= post.layout %>-<%= post.slug %>" class="ui main container article-type-<%= post.layout %>">
 
-    <div class="ui dividing header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-    </div>
+    <%- partial('post/title', {class_name: 'ui header'}) %>
 
     <div class="article-inner">
 
@@ -24,7 +22,7 @@
         <% } %>
 
         <footer class="article-footer">
-            <%- partial('post-description', {post: post}) %>
+            <%- partial('theme/' + theme.theme + '/post-description', {post: post}) %>
         </footer>
     </div>
     <% if (!index){ %>
