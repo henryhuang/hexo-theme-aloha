@@ -1,11 +1,18 @@
+
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
 /**
  * format url
  */
 hexo.extend.helper.register("resourceURL", function(cdn, local, configURL) {
 
     if(configURL.startsWith('cdn')) {
+        cdn = endsWith(cdn, '/') ? cdn.substr(0, cdn.length - 1) : cdn;
         return cdn + configURL.substring(3, configURL.length)
     } else {
+        local = (local.length > 1 && endsWith(local, '/')) ? local.substr(0, local.length - 1) : '';
         return local + configURL.substring(5, configURL.length);
     }
 
