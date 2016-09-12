@@ -21,9 +21,8 @@
         <%- partial('post/gallery') %>
         <% } %>
 
-        <footer class="article-footer">
-            <%- partial('theme/' + theme.theme + '/post-description', {post: post}) %>
-        </footer>
+        <%- partial('theme/' + theme.theme + '/post-description', {post: post}) %>
+
     </div>
     <% if (!index){ %>
         <%- partial('post/nav') %>
