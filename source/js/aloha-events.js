@@ -1,5 +1,5 @@
 $(function () {
-    $("#content").css("min-height", $(window).height() - 40 -2 - 30);
+    // $("#content").css("min-height", $("#menu-sidebar").height() - 41);
     $('pre').addClass('prettyprint');
     // $.scrollUp({
     //     scrollDistance: 100,
@@ -9,7 +9,6 @@ $(function () {
         $('#menu-sidebar')
             .sidebar('setting', 'transition', 'overlay')
             .sidebar('toggle');
-        ;
     });
     $("#right-menu-icon").on("click", function () {
         $('#right-menu-sidebar')

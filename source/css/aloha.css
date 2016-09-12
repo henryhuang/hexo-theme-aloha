@@ -4,9 +4,10 @@
 .post-content div {
   padding-top: 10px;
 }
-.blog-footer {
-  padding-top: 10px;
-  padding-bottom: 20px;
+footer {
+  bottom: 0;
+  background-color: #00B5AD;
+  height: 50px;
 }
 .main.container .article-footer {
   margin-top: 20px;
@@ -48,7 +49,7 @@ pre {
   bottom: 20px;
   left: 20px;
 }
-#body .body-content {
+#body .body-content #content {
   margin-top: 60px;
 }
 #sidebar-top .content {
