@@ -4,15 +4,9 @@
 .post-content div {
   padding-top: 10px;
 }
-#content-outer {
-  margin-top: 10px;
-}
 .blog-footer {
   padding-top: 10px;
   padding-bottom: 20px;
-}
-.post-content div a {
-  display: block;
 }
 .main.container .article-footer {
   margin-top: 20px;
@@ -55,7 +49,7 @@ pre {
   left: 20px;
 }
 #body .body-content {
-  margin-top: 41px;
+  margin-top: 60px;
 }
 #sidebar-top .content {
   position: relative;
