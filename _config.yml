@@ -40,7 +40,7 @@ cdn: //cdn.bootcss.com
 # stylesheets loaded in the <head>
 stylesheets:
 - local/css/aloha.css
-- cdn/semantic-ui/2.2.4/semantic.min.css
+- local/css/semantic-ui/2.2.4/semantic.min.css
 - local/css/prettify-github-v2.min.css
 #- local/css/scrolltop.css
 
