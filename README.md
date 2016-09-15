@@ -2,6 +2,8 @@
 
 **Aloha** is a HEXO theme, it use [Semantic UI](http://semantic-ui.com/).
 
+You could see a demo [huangyijie.com](http://huangyijie.com).
+
 ## Usage
 
 1. clone 
