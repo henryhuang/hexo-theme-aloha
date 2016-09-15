@@ -1,7 +1,7 @@
 {
-  "name": "elul",
-  "version": "0.0.1",
-  "description": "elul hexo theme",
+  "name": "aloha",
+  "version": "0.1.0",
+  "description": "aloha hexo theme",
   "private": true,
   "dependencies": {}
 }
