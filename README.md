@@ -1,4 +1,9 @@
-## Overview
+## Aloha
+---
+
+[Online Preview](http://huangyijie.com) | [English Document](https://github.com/henryhuang/hexo-theme-aloha/wiki/en) | [中文文档](https://github.com/henryhuang/hexo-theme-aloha/wiki/zh_CN)
+
+---
 
 **Aloha** is a HEXO theme, it use [Semantic UI](http://semantic-ui.com/).
 
@@ -10,6 +15,7 @@ You could see a demo [huangyijie.com](http://huangyijie.com).
 
 	``` 
 	$ cd $YOUR_BLOG_ROOT_DIR
+
 
 	$ git clone https://github.com/henryhuang/hexo-theme-aloha.git themes/aloha
 	```
