@@ -1,28 +1,19 @@
-## Aloha
+## Overview
 
-A Hexo theme, use Semantic UI.
+**Aloha** is a HEXO theme, it use [Semantic UI](http://semantic-ui.com/).
 
----
+## Usage
 
-#### Important Develop log
+1. clone 
 
-- 20160903
+	``` 
+	$ cd $YOUR_BLOG_ROOT_DIR
 
-    Add search function that base algolia search engine, but the Algolia logo has not be add to page.
-    
-    - How to use search function
-    
-        add flowing content to site's _config.yml
-        
-        ``` yml
-       algolia:
-         applicationID: 'YOUR APPLICATION ID'
-         apiKey: 'YOUR APP KEY'
-         indexName: 'YOUR INDEX's NAME'
-        ```
-        
-- 20160906
+	$ git clone https://github.com/henryhuang/hexo-theme-aloha.git themes/aloha
+	```
 
-    Right sidebar menu
-    
-    // TODO
+2. configuration
+
+	modify your site's configuration file **_config.yml**, set the **theme**'s value to **aloha**.
+	
+more about Aloha, please read [WIKI](https://github.com/henryhuang/hexo-theme-aloha/wiki).
