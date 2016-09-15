@@ -42,15 +42,12 @@ stylesheets:
 - local/css/aloha.css
 - local/css/semantic-ui/2.2.4/semantic.min.css
 - local/css/prettify-github-v2.min.css
-#- local/css/scrolltop.css
 
 # scripts loaded in the end of the body
 scripts:
 - cdn/jquery/3.1.0/jquery.min.js
-#- cdn/scrollup/2.4.1/jquery.scrollUp.min.js
 - cdn/semantic-ui/2.2.4/semantic.min.js
 - cdn/prettify/r298/prettify.min.js
-#- cnd/g/algoliasearch@3(algoliasearchLite.min.js),algoliasearch.helper@2
 - cdn/algoliasearch/3.18.1/algoliasearch.min.js
 - cdn/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js
 - local/js/semantic-ui-algolia.js
