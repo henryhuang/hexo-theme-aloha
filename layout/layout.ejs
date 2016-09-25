@@ -14,10 +14,15 @@ if (pageTitle == '') {
 
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
-<head>
+<head prefix="og: http://ogp.me/ns#">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="<%= config.description %>">
     <title><%= pageTitle %></title>
+
+    <% if (config.highlight.enable){ %>
+        <link href="https://fonts.gmirror.org/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <% } %>
 
     <% var cdn = theme.cdn;%>
     <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
@@ -26,18 +31,12 @@ if (pageTitle == '') {
             <link rel="stylesheet" href="<%= resourceURL(cdn, config.root, url) %>">
         <% }); %>
     <% } %>
+    
+    <!-- Open Graph -->
+    <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
 
-    <script>
-        var algoliaEnabled = false;
-        <% if(config.algolia && config.algolia.applicationID) {%>
-            var algolia = {
-                'applicationID': '<%= config.algolia.applicationID%>',
-                'apiKey': '<%= config.algolia.apiKey%>',
-                'indexName': '<%= config.algolia.indexName%>'
-            };
-            algoliaEnabled = true;
-        <%}%>
-    </script>
+    <%-partial('_partial/structured-data-markup')%>
+    <%-partial('_partial/js-params')%>
 
 </head>
 <body id="body" style="margin-bottom: 0;" class="pushable">
