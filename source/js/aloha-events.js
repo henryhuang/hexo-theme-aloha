@@ -10,4 +10,5 @@ $(function () {
             .sidebar('toggle');
         ;
     });
+    $(".magnific-img").magnificPopup({type: 'image'});
 })
