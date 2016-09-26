@@ -50,4 +50,3 @@ scripts:
 - cdn/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js
 - local/js/semantic-ui-algolia.js
 - local/js/aloha-events.js
-- local/js/aloha.js
