@@ -1,0 +1,34 @@
+<div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3><%= config.title %></h3>
+        </div>
+    </div>
+    <%-partial('_partial/sidebar-card')%>
+
+    <% Object.keys(theme.menu).forEach(function(key) { %>
+    <% var className = "item"; %>
+
+    <% if (url_for(theme.menu[key].value) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key].value) == '/.' && is_home())) { %>
+    <% className = "active item"%>
+    <% } %>
+
+    <a href="<%= theme.menu[key].value %>" class="<%= className %>">
+        <i class="<%= theme.menu[key].icon %> icon"></i>
+        <%= __(theme.menu[key].name) %>
+    </a>
+
+    <% }); %>
+
+    <% if(config.algolia && config.algolia.applicationID) {%>
+
+    <div class="ui search item">
+        <div class="ui transparent icon input">
+            <input id="search-input" type="text" placeholder="<%= __('searchPlaceholder')%>">
+            <i class="search link icon"></i>
+        </div>
+    </div>
+
+    <% } %>
+</div>

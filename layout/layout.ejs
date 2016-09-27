@@ -20,23 +20,27 @@ if (pageTitle == '') {
     <meta name="description" content="<%= config.description %>">
     <title><%= pageTitle %></title>
 
-    <% if (config.highlight.enable){ %>
-        <link href="https://fonts.gmirror.org/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <% } %>
-
-    <% var cdn = theme.cdn;%>
-    <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
-        <!-- stylesheets list from config.yml -->
-        <% theme.stylesheets.forEach(function(url) { %>
-            <link rel="stylesheet" href="<%= resourceURL(cdn, config.root, url) %>">
-        <% }); %>
-    <% } %>
-    
     <!-- Open Graph -->
     <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
 
     <%-partial('_partial/structured-data-markup')%>
     <%-partial('_partial/js-params')%>
+
+    <% if (config.rss){ %>
+        <link rel="alternate" href="<%- config.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+
+    <% css('css/aloha') %>
+    <% if (config.highlight.enable){ %>
+        <link href="https://fonts.gmirror.org/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <% } %>
+    <% var cdn = theme.cdn;%>
+    <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+        <!-- stylesheets list from config.yml -->
+        <% theme.stylesheets.forEach(function(url) { %>
+        <link rel="stylesheet" href="<%= resourceURL(cdn, config.root, url) %>">
+        <% }); %>
+    <% } %>
 
 </head>
 <body id="body" style="margin-bottom: 0;" class="pushable">
@@ -45,42 +49,7 @@ if (pageTitle == '') {
         <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
     </div>
 
-    <div id="menu-sidebar" class="ui left vertical sidebar menu">
-
-        <div id="sidebar-top" class="ui center aligned grid">
-            <div class="sixteen wide column">
-                <div class="content">
-                    <h3><%= config.title %></h3>
-                </div>
-            </div>
-        </div>
-        <%-partial('_partial/sidebar-card')%>
-
-        <% Object.keys(theme.menu).forEach(function(key) { %>
-        <% var className = "item"; %>
-
-        <% if (url_for(theme.menu[key].value) == '/' + path.replace('/index.html', '') || (url_for(theme.menu[key].value) == '/.' && is_home())) { %>
-        <% className = "active item"%>
-        <% } %>
-
-        <a href="<%= theme.menu[key].value %>" class="<%= className %>">
-            <i class="<%= theme.menu[key].icon %> icon"></i>
-            <%= __(theme.menu[key].name) %>
-        </a>
-
-        <% }); %>
-
-        <% if(config.algolia && config.algolia.applicationID) {%>
-
-        <div class="ui search item">
-            <div class="ui transparent icon input">
-                <input id="search-input" type="text" placeholder="<%= __('searchPlaceholder')%>">
-                <i class="search link icon"></i>
-            </div>
-        </div>
-
-        <% } %>
-    </div>
+    <%- partial('_partial/menu')%>
 
     <div class="pusher body-content">
         <div id="content" class="ui container">
