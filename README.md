@@ -20,3 +20,7 @@
 	modify your site's configuration file **_config.yml**, set the **theme**'s value to **aloha**.
 	
 more about Aloha, please read [WIKI](https://github.com/henryhuang/hexo-theme-aloha/wiki).
+
+## Changelog
+- [0.1.1](https://github.com/henryhuang/hexo-theme-aloha/wiki/CHANGELOG_0.1.1)
+- [0.1.0](https://github.com/henryhuang/hexo-theme-aloha/wiki/CHANGELOG_0.1.0)
