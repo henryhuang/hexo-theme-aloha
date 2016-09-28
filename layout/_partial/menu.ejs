@@ -14,9 +14,10 @@
     <% className = "active item"%>
     <% } %>
 
-    <a href="<%= theme.menu[key].value %>" class="<%= className %>">
-        <i class="<%= theme.menu[key].icon %> icon"></i>
-        <%= __(theme.menu[key].name) %>
+    <% var item = theme.menu[key];%>
+    <a href="<%= item.value %>" class="<%= className %>" <%= item.target ? 'target="' + item.target + '"' : ''%>>
+        <i class="<%= item.icon %> icon"></i>
+        <%= __(item.name) %>
     </a>
 
     <% }); %>
