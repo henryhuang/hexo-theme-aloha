@@ -72,9 +72,9 @@ pre {
 }
 .article-entry pre {
   background: #2d2d2d;
-  margin-right: -20px;
-  margin-left: -20px;
-  padding: 15px 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 15px 0px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
@@ -89,9 +89,9 @@ pre {
 }
 .article-entry .highlight {
   background: #2d2d2d;
-  margin-right: -20px;
-  margin-left: -20px;
-  padding: 15px 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 15px 0px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
@@ -144,12 +144,12 @@ pre {
   background: #515151;
 }
 .article-entry .gist {
-  margin: 0 -20px;
+  margin: 0 0px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
   background: #2d2d2d;
-  padding: 15px 20px 15px 0;
+  padding: 15px 0px 15px 0;
 }
 .article-entry .gist .gist-file {
   border: none;
@@ -182,7 +182,7 @@ pre {
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 .article-entry .gist .gist-file .gist-meta a {
   color: #258fb8;
