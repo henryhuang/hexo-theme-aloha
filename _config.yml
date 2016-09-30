@@ -49,6 +49,6 @@ scripts:
 - cdn/semantic-ui/2.2.4/semantic.min.js
 - cdn/algoliasearch/3.18.1/algoliasearch.min.js
 - cdn/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js
-- cdn/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js
+#- cdn/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js
 - local/js/semantic-ui-algolia.js
 - local/js/aloha-events.js
