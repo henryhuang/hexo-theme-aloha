@@ -6,11 +6,15 @@ hexo.extend.filter.register('after_post_render', function(data){
             $(item).addClass("ui centered image").wrap('<a class="magnific-img" href="' + $(item).attr('src') + '"></a>');
         });
     }
-    $('ol').each(function (index, item) {
-        $(item).addClass("ui list");
-        $(item).children("li").each(function (index, item) {
-            $(item).addClass("item");
-        });
+    $('ol, ul').each(function (index, item) {
+        var parents = $(item).parent();
+        if(parents.length > 0) {
+            if(parents[0].tagName != 'li') {
+                $(item).addClass("ui list");
+            }
+        } else {
+            $(item).addClass("ui list");
+        }
     });
     return data.content = $.html();
 });

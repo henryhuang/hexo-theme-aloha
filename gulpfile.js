@@ -17,7 +17,7 @@ gulp.task('less', function() {
         .pipe(livereload());
 });
 
-gulp.task('dev', function() {
+gulp.task('dev', ['less'], function() {
     gulp.watch('./source/css/_partial/*.less', ['less']);  // Watch all the .less files, then run the less task
 });
 
