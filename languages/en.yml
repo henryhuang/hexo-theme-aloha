@@ -11,3 +11,6 @@ rss: RSS
 archives: Archives
 category: Category
 tag: Tag
+index:
+  top: TOP
+recommend: Recommend

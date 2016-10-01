@@ -1,4 +1,13 @@
 <div class="content post-content">
-    <a class="header" style="display: inline-block;" href="<%- url_for(post.path) %>"><%= post.title %></a>
+
+    <a class="header" style="display: inline-block;" href="<%- url_for(post.path) %>">
+        <%if(post.top) {%>
+            <span class="ui teal label"><%= __('index.top')%></span>
+        <%}%>
+        <%if(post.recommend) {%>
+            <span class="ui teal label"><%= __('recommend')%></span>
+        <%}%>
+        <%= post.title %>
+    </a>
     <%- partial('post-description', {post: post})%>
 </div>

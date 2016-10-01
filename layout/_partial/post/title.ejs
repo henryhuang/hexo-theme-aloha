@@ -1,14 +1,23 @@
 <% if (post.link){ %>
 <h1 class="ui header">
+    <%if(label && post.recommend) {%>
+        <span class="ui teal label"><%= __('recommend')%></span>
+    <%}%>
     <a class="<%= class_name %>" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
 </h1>
 <% } else if (post.title){ %>
 <% if (index){ %>
-<h1>
+<h1 class="<%= class_name %>">
+    <%if(label && post.recommend) {%>
+        <span class="ui teal label"><%= __('recommend')%></span>
+    <%}%>
     <a class="<%= class_name %>" href="<%- url_for(post.path) %>"><%= post.title %></a>
 </h1>
 <% } else { %>
 <h1 class="<%= class_name %>">
+    <%if(label && post.recommend) {%>
+        <span class="ui teal label"><%= __('recommend')%></span>
+    <%}%>
     <%= post.title %>
 </h1>
 <% } %>

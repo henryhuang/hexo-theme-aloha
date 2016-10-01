@@ -11,3 +11,6 @@ rss: RSS
 archives: 归档
 category: 分类
 tag: 标签
+index:
+  top: 置顶
+recommend: 荐
