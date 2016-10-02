@@ -1,137 +1,44 @@
-.post-content {
-div {
-padding-top: 10px;
-}
-display: inline;
-}
+<div id="pagination" class="nav-web ui text container pagination">
 
-//@media (min-height: 320px) {
-//  .ui.footer.form-page { /* Increased specificity for SO snippet priority */
-//    position: absolute;
-//    bottom: 0;
-//    width: 100%;
-//  }
-//}
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                <% if(post.prev) { %>
 
-footer {
-bottom:0;
-background-color: #00B5AD;
-height: 50px;
-}
+                <a href="<%= url_for(page.prev.path) %>" class="ui tiny button">
 
-.main.container {
+                    <i class="angle left icon"></i>
+                    <% if (post.prev.title){ %>
+                    <%= post.prev.title %>
+                    <% } else { %>
+                    (<%= __('noTitle')%>)
+                    <% } %>
 
-.article-footer {
-margin-top: 20px;
-}
+                </a>
 
-.pagination {
-margin-top: 40px;
-margin-bottom: 40px;
-}
+                <% } else { %>
 
-}
+                <a class="ui tiny button disabled"><i class="angle left icon"></i><%= __('prePage') %></a>
 
-.post-description {
+                <% } %>
+            </div>
+            <div class="column nav-right">
+                <% if(post.next) { %>
 
-.post-description-item {
-padding-right: 10px;
-height: 100%;
-vertical-align: middle;
-}
+                <a href="<%= url_for(page.next.path) %>" class="ui tiny button">
+                    <% if (post.next.title){ %>
+                    <%= post.next.title %>
+                    <% } else { %>
+                    (<%= __('noTitle')%>)
+                    <% } %>
+                    <i class="angle right icon"></i></a>
+                <% } else { %>
 
-}
+                <a class="ui tiny button disabled"><%= __('nextPage') %><i class="angle right icon"></i></a>
 
-pre {
-word-break: break-all;
-word-wrap: break-word;
-}
+                <% } %>
+            </div>
+        </div>
+    </div>
 
-.tag-container {
-.tagpage.header {
-font-size: 30px
-}
-.ui.dividing.header {
-vertical-align: middle;
-}
-}
-
-#search-modal {
-#search-results {
-.highlight {
-background-color: #c6e6f4;
-}
-.search-result-tags {
-padding-top: 5px;
-}
-}
-.algolia-logo {
-float: right;
-}
-}
-
-.sidebar-card {
-padding: 10px;
-//.content {
-//  margin-top: 41px;
-//}
-}
-
-#body {
-.menu-buttons {
-position: fixed;
-z-index: 2147483647;
-bottom: 20px;
-left: 20px;
-}
-.body-content {
-#content {
-margin-top: 60px;
-}
-}
-}
-
-#sidebar-top {
-.content {
-position: relative;
-background: #FFF;
-margin: 1rem 0;
-text-align: center;
-}
-}
-
-.article-inner {
-.post-description {
-padding-top: 10px;
-}
-}
-
-@media only screen and (max-width: 1200px) and (min-width: 768px) {
-.nav-left {
-text-align: right;
-}
-
-.nav-right {
-text-align: left;
-}
-}
-
-@media only screen and (min-width: 1200px) {
-.nav-left {
-text-align: right;
-}
-
-.nav-right {
-text-align: left;
-}
-}
-
-@media only screen and (max-width: 767px) {
-.nav-left {
-text-align: center;
-}
-
-.nav-right {
-text-align: center;
-}
-}
+</div>
