@@ -106,55 +106,32 @@ pre {
   }
 }
 
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .nav-left {
+    text-align: right;
+  }
 
-//.li-style() {
-//
-//  display: list-item;
-//  table-layout: fixed;
-//  padding: .21428571em 0;
-//  line-height: 1.14285714em;
-//  position: relative;
-//
-//  &:before {
-//    -webkit-user-select: none;
-//    -moz-user-select: none;
-//    -ms-user-select: none;
-//    user-select: none;
-//    pointer-events: none;
-//    position: absolute;
-//    top: auto;
-//    left: auto;
-//    font-weight: 400;
-//    margin-left: -1.25rem;
-//    opacity: 1;
-//    color: inherit;
-//    vertical-align: top;
-//  }
-//
-//}
-//
-//ol, ul {
-//
-//  li {
-//
-//    .li-style();
-//
-//    &:first-child {
-//      &:after {
-//        content: '';
-//        display: block;
-//        height: 0;
-//        clear: both;
-//        visibility: hidden;
-//      }
-//    }
-//
-//  }
-//
-//  ol, ul {
-//    clear: both;
-//    margin: 0;
-//    padding: .75em 1.25rem 1.25em .5em;
-//  }
-//
-//}
+  .nav-right {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .nav-left {
+    text-align: right;
+  }
+
+  .nav-right {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-left {
+    text-align: center;
+  }
+
+  .nav-right {
+    text-align: center;
+  }
+}

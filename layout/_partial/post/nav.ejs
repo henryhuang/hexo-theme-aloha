@@ -1,46 +1,137 @@
+.post-content {
+div {
+padding-top: 10px;
+}
+display: inline;
+}
 
-<div id="pagination" class="ui text container pagination">
-    <div class="ui two column centered grid">
+//@media (min-height: 320px) {
+//  .ui.footer.form-page { /* Increased specificity for SO snippet priority */
+//    position: absolute;
+//    bottom: 0;
+//    width: 100%;
+//  }
+//}
 
-        <div class="tiny ui buttons">
+footer {
+bottom:0;
+background-color: #00B5AD;
+height: 50px;
+}
 
-            <% if(post.prev) { %>
+.main.container {
 
-                <a href="<%= url_for(page.prev.path) %>" class="ui button">
+.article-footer {
+margin-top: 20px;
+}
 
-                    <i class="angle left icon"></i>
-                    <% if (post.prev.title){ %>
-                        <%= post.prev.title %>
-                    <% } else { %>
-                        (<%= __('noTitle')%>)
-                    <% } %>
+.pagination {
+margin-top: 40px;
+margin-bottom: 40px;
+}
 
-                </a>
+}
 
-            <% } else { %>
+.post-description {
 
-                <a class="ui button disabled"><i class="angle left icon"></i><%= __('prePage') %></a>
+.post-description-item {
+padding-right: 10px;
+height: 100%;
+vertical-align: middle;
+}
 
-            <% } %>
+}
 
-            <div class="or" data-text="<%= __('or') %>"></div>
+pre {
+word-break: break-all;
+word-wrap: break-word;
+}
 
-            <% if(post.next) { %>
+.tag-container {
+.tagpage.header {
+font-size: 30px
+}
+.ui.dividing.header {
+vertical-align: middle;
+}
+}
 
-                <a href="<%= url_for(page.next.path) %>" class="ui button">
-                    <% if (post.next.title){ %>
-                        <%= post.next.title %>
-                    <% } else { %>
-                        (<%= __('noTitle')%>)
-                    <% } %>
-                    <i class="angle right icon"></i></a>
-            <% } else { %>
+#search-modal {
+#search-results {
+.highlight {
+background-color: #c6e6f4;
+}
+.search-result-tags {
+padding-top: 5px;
+}
+}
+.algolia-logo {
+float: right;
+}
+}
 
-                <a class="ui button disabled"><%= __('nextPage') %><i class="angle right icon"></i></a>
+.sidebar-card {
+padding: 10px;
+//.content {
+//  margin-top: 41px;
+//}
+}
 
-            <% } %>
+#body {
+.menu-buttons {
+position: fixed;
+z-index: 2147483647;
+bottom: 20px;
+left: 20px;
+}
+.body-content {
+#content {
+margin-top: 60px;
+}
+}
+}
 
-        </div>
+#sidebar-top {
+.content {
+position: relative;
+background: #FFF;
+margin: 1rem 0;
+text-align: center;
+}
+}
 
-    </div>
-</div>
+.article-inner {
+.post-description {
+padding-top: 10px;
+}
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+.nav-left {
+text-align: right;
+}
+
+.nav-right {
+text-align: left;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+.nav-left {
+text-align: right;
+}
+
+.nav-right {
+text-align: left;
+}
+}
+
+@media only screen and (max-width: 767px) {
+.nav-left {
+text-align: center;
+}
+
+.nav-right {
+text-align: center;
+}
+}

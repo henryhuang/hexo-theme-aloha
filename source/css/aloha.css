@@ -61,6 +61,30 @@ pre {
 .article-inner .post-description {
   padding-top: 10px;
 }
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .nav-left {
+    text-align: right;
+  }
+  .nav-right {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .nav-left {
+    text-align: right;
+  }
+  .nav-right {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .nav-left {
+    text-align: center;
+  }
+  .nav-right {
+    text-align: center;
+  }
+}
 .article-entry pre,
 .article-entry code {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
