@@ -40,7 +40,8 @@ cdn: //cdn.bootcss.com
 # stylesheets loaded in the <head>
 stylesheets:
 - local/css/aloha.css
-- local/css/semantic-ui/2.2.4/semantic.min.css
+#- local/css/semantic-ui/2.2.4/semantic.min.css
+- cdn/semantic-ui/2.2.4/semantic.min.css
 - cdn/magnific-popup.js/1.1.0/magnific-popup.min.css
 
 # scripts loaded in the end of the body
