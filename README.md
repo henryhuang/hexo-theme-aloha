@@ -21,6 +21,10 @@
 	
 more about Aloha, please read [WIKI](https://github.com/henryhuang/hexo-theme-aloha/wiki).
 
+## Todolist
+    
+See [here](https://github.com/henryhuang/hexo-theme-aloha/issues?q=is%3Aissue+is%3Aopen+label%3ATodolist).
+
 ## Changelog
 - [0.1.1](https://github.com/henryhuang/hexo-theme-aloha/wiki/CHANGELOG_0.1.1)
 - [0.1.0](https://github.com/henryhuang/hexo-theme-aloha/wiki/CHANGELOG_0.1.0)
