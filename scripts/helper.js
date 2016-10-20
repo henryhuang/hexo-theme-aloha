@@ -1,0 +1,1 @@
+hexo.extend.helper.register('toc_semantic', require('./helper/toc'));

@@ -10,5 +10,5 @@ $(function () {
             .sidebar('toggle');
         ;
     });
-    // $(".magnific-img").magnificPopup({type: 'image'});
+    $("#article-toc").sticky({ context: '#article-content' });
 })

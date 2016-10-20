@@ -85,6 +85,9 @@ pre {
     text-align: center;
   }
 }
+#article-toc {
+  top: 55px;
+}
 .article-entry pre,
 .article-entry code {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;

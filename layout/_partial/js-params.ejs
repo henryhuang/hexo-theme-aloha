@@ -1,12 +1,11 @@
 <script>
     var algoliaEnabled = false;
     <% if(config.algolia && config.algolia.applicationID) {%>
-    var algolia = {
-        'applicationID': '<%= config.algolia.applicationID%>',
-        'apiKey': '<%= config.algolia.apiKey%>',
-        'indexName': '<%= config.algolia.indexName%>'
-    };
-    algoliaEnabled = true;
-
+        var algolia = {
+            'applicationID': '<%= config.algolia.applicationID%>',
+            'apiKey': '<%= config.algolia.apiKey%>',
+            'indexName': '<%= config.algolia.indexName%>'
+        };
+        algoliaEnabled = true;
     <%}%>
 </script>

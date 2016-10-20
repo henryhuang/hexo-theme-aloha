@@ -1,40 +1,84 @@
 <div id="<%= post.layout %>-<%= post.slug %>" class="ui main container article-type-<%= post.layout %>">
 
-    <%- partial('post/title', {class_name: 'ui header', label: true}) %>
+    <%
+    var tocEnabled = false;
+    var leftClass = "sixteen wide column";
 
-    <div class="article-inner">
+    if (post.layout === 'post') {
 
-        <div class="article-entry" itemprop="articleBody">
-            <% if (post.excerpt && index){ %>
-            <%- post.excerpt %>
-            <% if (theme.excerpt_link){ %>
-            <p class="article-more-link">
-                <a class="btn btn-primary" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-            </p>
+        tocEnabled = true;
+
+        if (page.toc != undefined) {
+            tocEnabled = page.toc;
+        }
+
+        if (tocEnabled) {
+            leftClass = "thirteen wide computer thirteen wide tablet sixteen wide mobile column";
+        }
+    }
+    %>
+
+    <div class="ui <%= tocEnabled ? "divided" : "" %> grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="<%= leftClass %>">
+                <%- partial('post/title', {class_name: 'ui header', label: true}) %>
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        <% if (post.excerpt && index){ %>
+                        <%- post.excerpt %>
+                        <% if (theme.excerpt_link){ %>
+                        <p class="article-more-link">
+                            <a class="btn btn-primary"
+                               href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+                        </p>
+                        <% } %>
+                        <% } else { %>
+                        <%- post.content %>
+                        <% } %>
+                    </div>
+
+                    <% if (!(post.excerpt && index)){ %>
+                    <%- partial('post/gallery') %>
+                    <% } %>
+
+                    <%- partial('theme/' + theme.theme + '/post-description', {post: post}) %>
+
+                </div>
+                <% if (!index){ %>
+                <%- partial('post/nav') %>
+                <% } %>
+            </div>
+
+            <% if (tocEnabled) { %>
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <%- toc_semantic(page.content) %>
+                </div>
+
+            </div>
             <% } %>
-            <% } else { %>
-            <%- post.content %>
-            <% } %>
+
         </div>
-
-        <% if (!(post.excerpt && index)){ %>
-        <%- partial('post/gallery') %>
-        <% } %>
-
-        <%- partial('theme/' + theme.theme + '/post-description', {post: post}) %>
-
     </div>
-    <% if (!index){ %>
-        <%- partial('post/nav') %>
-    <% } %>
 </div>
 
 <% if (!index && config.duoshuo && config.duoshuo.shortname){ %>
-    <%- partial('../_widget/duoshuo', {id: post.path, title: post.title + ' | ' + config.title, url: config.url + config.root + post.path})%>
+<%- partial('../_widget/duoshuo', {
+    id: post.path,
+    title: post.title + ' | ' + config.title,
+    url: config.url + config.root + post.path
+}) %>
 <% } else if (!index && config.disqus_shortname){ %>
-    <section id="comments">
-        <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-    </section>
+<section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
 <% } %>
