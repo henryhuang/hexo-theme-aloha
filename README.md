@@ -11,7 +11,7 @@
 [release-image]: https://img.shields.io/github/release/henryhuang/hexo-theme-aloha.svg?style=flat-square
 [release-url]: https://github.com/henryhuang/hexo-theme-aloha/releases/latest
 
-[Online Preview](https://huangyijie.com) | [English Document](https://github.com/henryhuang/hexo-theme-aloha/wiki/en) | [中文文档](https://github.com/henryhuang/hexo-theme-aloha/wiki/zh_CN)
+[Online Preview](https://henryhuang.github.io/hexo-theme-aloha/) | [English Document](https://github.com/henryhuang/hexo-theme-aloha/wiki/en) | [中文文档](https://github.com/henryhuang/hexo-theme-aloha/wiki/zh_CN)
 
 **Aloha** is a HEXO theme, it use [Semantic UI](http://semantic-ui.com/).
 
