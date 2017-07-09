@@ -1,0 +1,278 @@
+.post-content {
+  display: inline;
+}
+.post-content div {
+  padding-top: 10px;
+}
+footer {
+  bottom: 0;
+  background-color: #00B5AD;
+  height: 50px;
+}
+.main.container .article-footer {
+  margin-top: 20px;
+}
+.main.container .pagination {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.post-description .post-description-item {
+  padding-right: 10px;
+  height: 100%;
+  vertical-align: middle;
+}
+pre {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.tag-container .tagpage.header {
+  font-size: 30px;
+}
+.tag-container .ui.dividing.header {
+  vertical-align: middle;
+}
+#search-modal #search-results .highlight {
+  background-color: #c6e6f4;
+}
+#search-modal #search-results .search-result-tags {
+  padding-top: 5px;
+}
+#search-modal .algolia-logo {
+  float: right;
+}
+.sidebar-card {
+  padding: 10px;
+}
+#body .menu-buttons {
+  position: fixed;
+  z-index: 2147483647;
+  bottom: 20px;
+  left: 20px;
+}
+#body .body-content #content {
+  margin-top: 60px;
+}
+#sidebar-top .content {
+  position: relative;
+  background: #FFF;
+  margin: 1rem 0;
+  text-align: center;
+}
+.article-inner .post-description {
+  padding-top: 10px;
+}
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .nav-left {
+    text-align: right;
+  }
+  .nav-right {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .nav-left {
+    text-align: right;
+  }
+  .nav-right {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .nav-left {
+    text-align: center;
+  }
+  .nav-right {
+    text-align: center;
+  }
+}
+#article-toc {
+  top: 55px;
+}
+.article-entry pre,
+.article-entry code {
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+}
+.article-entry code {
+  background: #eee;
+  text-shadow: 0 1px #fff;
+  padding: 0 0.3em;
+}
+.article-entry pre {
+  background: #2d2d2d;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 15px 20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  overflow: auto;
+  color: #cccccc;
+  line-height: 22.4px;
+}
+.article-entry pre code {
+  background: none;
+  text-shadow: none;
+  padding: 0;
+}
+.article-entry .highlight {
+  background: #2d2d2d;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 15px 20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  overflow: auto;
+  color: #cccccc;
+  line-height: 22.4px;
+  margin-right: 0;
+  margin-left: 0;
+}
+.article-entry .highlight pre {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.article-entry .highlight table {
+  margin: 0;
+  width: auto;
+}
+.article-entry .highlight td {
+  border: none;
+  padding: 0;
+}
+.article-entry .highlight figcaption {
+  font-size: 0.85em;
+  color: #999999;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+.article-entry .highlight figcaption:before,
+.article-entry .highlight figcaption:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.article-entry .highlight figcaption:after {
+  clear: both;
+}
+.article-entry .highlight figcaption a {
+  float: right;
+}
+.article-entry .highlight .gutter pre {
+  color: #666;
+  font-size: 0.85em;
+  text-align: right;
+  padding-right: 20px;
+}
+.article-entry .highlight .line {
+  height: 22.4px;
+}
+.article-entry .highlight .line.marked {
+  background: #515151;
+}
+.article-entry .gist {
+  margin: 0 -20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  background: #2d2d2d;
+  padding: 15px 20px 15px 0;
+}
+.article-entry .gist .gist-file {
+  border: none;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  margin: 0;
+}
+.article-entry .gist .gist-file .gist-data {
+  background: none;
+  border: none;
+}
+.article-entry .gist .gist-file .gist-data .line-numbers {
+  color: #666;
+  font-size: 0.85em;
+  background: none;
+  border: none;
+  padding: 0 20px 0 0;
+}
+.article-entry .gist .gist-file .gist-data .line-data {
+  padding: 0 !important;
+}
+.article-entry .gist .gist-file .highlight {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.article-entry .gist .gist-file .gist-meta {
+  background: #2d2d2d;
+  color: #999999;
+  font: 0.85em -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  text-shadow: 0 0;
+  padding: 0;
+  margin-top: 1em;
+  margin-left: 20px;
+}
+.article-entry .gist .gist-file .gist-meta a {
+  color: #258fb8;
+  font-weight: normal;
+}
+.article-entry .gist .gist-file .gist-meta a:hover {
+  text-decoration: underline;
+}
+pre .comment,
+pre .title {
+  color: #999999;
+}
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #f2777a;
+}
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #f99157;
+}
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+  color: #99cc99;
+}
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #99cc99;
+}
+pre .css .hexcolor {
+  color: #66cccc;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #6699cc;
+}
+pre .keyword,
+pre .javascript .function {
+  color: #cc99cc;
+}
